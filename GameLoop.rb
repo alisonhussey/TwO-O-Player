@@ -39,10 +39,15 @@ class Game
       puts "Seriously? No!"
     end 
     puts "P1: #{@player_1.lives}/3 vs P2: #{@player_2.lives}/3"
-    if @player_1.lives == 0 || @player_2.lives == 0
+    if @player_1.lives == 0 
+      puts "Player 2 wins with a score of #{@player_2.lives}/3"
       puts "----- GAME OVER -----"
       puts "Good bye!"
-    else 
+    elsif @player_2.lives == 0
+      puts "Player 1 wins with a score of #{@player_1.lives}/3"
+      puts "----- GAME OVER -----"
+      puts "Good bye!"
+    else
       puts "----- NEW TURN -----"
       update_player()
     end
